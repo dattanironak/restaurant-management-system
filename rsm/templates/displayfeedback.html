@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+</head>
+<body>
+
+<h1>Feedbacks</h1>
+
+<table>
+  <tr>
+    <th>Description</th>
+    <th>Ratings</th>
+    <th>Date</th>>
+  </tr>
+
+  {% for feedback in fd  %}
+  <tr>
+    <td>{{feedback.feedback_desc}}</td>
+    <td>{{feedback.ratings}}</td>
+    <td>{{feedback.date}}</td>
+  </tr>
+  {% endfor %}
+
+</table>
+<table>
+</table>
+
+</body>
+</html>

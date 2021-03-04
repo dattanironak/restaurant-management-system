@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>HTML Forms</h2>
+
+
+<form  method="post">{% csrf_token %}
+  <label for="feedback_desc">Your kind Workds</label><br>
+  <input type="text" id="feedback_desc" name="feedback_desc"><br>
+  <label for="Ratings">Ratings</label><br>
+  <input type="text" id="ratings" name="ratings" value="Provide ratings out of 5"><br><br>
+  <input type="submit" value="Submit">
+</form>
+
+
+
+</body>
+</html>

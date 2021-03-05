@@ -5,19 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="52f09969-8118-4e56-a651-d733b4340377" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/feedback/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/helloworldapp/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/helloworldapp/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/helloworldapp/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/helloworldapp/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/helloworldapp/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/helloworldapp/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/helloworldapp/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/helloworldapp/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feedback/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/feedback/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rsm/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/rsm/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rsm/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/rsm/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/feedback.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/feedback.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,5 +106,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

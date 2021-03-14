@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;
+}
+</style>
+    <meta charset="UTF-8">
+    <title>Menu</title>
+</head>
+
+<body>
+
+<h2>Menu</h2>
+<p>We have lot of dishes to satisfy your hunger.</p>
+
+{% if request.user.is_staff %}
+<h2><a href="/menu/update">Update Menu</a></h2>
+{% endif %}
+<table style="width:100%">
+
+     <tr>
+    <th>Category</th>
+    <th>ID</th>
+         <th>Name</th>
+         <th>Price</th>
+  </tr>
+
+    {% for item in Menu %}
+  <tr>
+      <td>{{item.category}}</td>
+      <td>{{item.item_id}}</td>
+      <td>{{item.item_name}}</td>
+      <td>{{item.price}}</td>
+
+  </tr>
+    {% endfor %}
+
+</table>
+
+</body>
+</html>

@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'feedback.apps.FeedbackConfig',
     'user.apps.UserConfig',
+    'menu.apps.MenuConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

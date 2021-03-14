@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Update Item</title>
+</head>
+
+{% for msg in messages %}
+
+<h3>{{msg}}</h3>
+{% endfor %}
+
+<h1>You are adding item to menu.</h1>
+<form name="AddItem" method="post">{% csrf_token %}
+
+    <label>Item Name :<input type="text" name="item_name" required></label><br>
+    <label>Item ID :<input type="text" pattern="(?=.*[A-Z]).{1,3}" name="item_id" required></label><br>
+    <label>Item Category :<select id="categories" name="categories">
+        {% for category in categories %}
+        <option value={{category}}>{{category}}</option>
+        {% endfor %}
+    </select>
+    </label><br>
+    <label>Item Price :<input type="number" name="price"  required></label><br>
+    <label>Is Available ?<input type="checkbox" name="is_available"></label><br>
+
+    <input type="submit" value="ADD">
+
+</form>

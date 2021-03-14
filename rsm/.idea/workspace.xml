@@ -6,11 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="52f09969-8118-4e56-a651-d733b4340377" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feedback/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/feedback/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rsm/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/rsm/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rsm/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/rsm/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/feedback.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/feedback.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +33,9 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/templates/updateitem.html" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProjectId" id="1pHRbksRzbA4Jkb40iIRs4xPeyK" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -49,7 +49,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../helloworld" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Django-ROMS-master/Django-ROMS-master" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">

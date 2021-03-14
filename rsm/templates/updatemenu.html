@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;
+}
+</style>
+    <meta charset="UTF-8">
+    <title>Menu</title>
+</head>
+
+<body>
+
+{% for msg in messages %}
+
+<h3>{{msg}}</h3>
+{% endfor %}
+
+
+<h2>Menu</h2>
+<p>We have lot of dishes to satisfy your hunger.</p>
+
+<h3><a href="/menu/additem">Add Item</a> </h3>
+
+<table style="width:100%">
+
+     <tr>
+        <th>Category</th>
+        <th>Name</th>
+         <th>ID</th>
+         <th>Price</th>
+         <th>Update</th>
+         <th>Delete</th>
+         <th>Is Available ?</th>
+  </tr>
+    {% for item in Menu %}
+  <tr>
+      <td>{{item.category}}</td>
+      <td>{{item.item_name}}</td>
+      <td>{{item.item_id}}</td>
+      <td>{{item.price}}</td>
+
+      <td><a href="/menu/updateitem/{{item.item_id}}"> <button type="submit">Update</button></a></td>
+      <td><a href="/menu/deleteitem/{{item.item_id}}"><button type="submit">Delete</button></a></td>
+      <td>
+          {% if item.is_available %}
+          Yes
+          {% else %}
+          No
+          {% endif %}
+          <a href="/menu/changeavailable/{{item.item_id}}"><button type="submit">Change</button></a>
+      </td>
+  </tr>
+    {% endfor %}
+
+</table>
+
+</body>
+</html>

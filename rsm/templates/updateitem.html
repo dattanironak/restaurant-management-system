@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Item</title>
+</head>
+<h1>{{item.item_name}},{{item.item_id}}</h1>
+
+{% for msg in messages %}
+
+<h2>{{msg}}</h2>
+{% endfor %}
+<P>Item ID, Name can not be changed.</P>
+<form name="UpdateItem" method="post">{% csrf_token %}
+
+
+    <label>Item Name :<input type="text" name="item_name"  required value={{item.item_name}} ></label><br>
+
+    <label>Item Category :<select id="categories" name="categories">
+        {% for category in categories %}
+        <option value={{category}} {% if category == item.category %} selected {% endif %}>{{category}}</option>
+        {% endfor %}
+    </select>
+    </label><br>
+
+    <label>Item Price :<input type="number" name="price" value={{item.price}} required></label><br>
+    <label>Is Available ?<input type="checkbox" {% if item.is_available %} checked {% endif %} name="is_available" value="is_available"></label><br>
+
+    <input type="submit" value="Update">
+</form>
+</html>

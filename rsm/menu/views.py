@@ -88,6 +88,7 @@ def updateitem(request, uid):
                 return render(request, 'updateitem.html', {'item': item, 'categories': categories})
         else:
             return redirect('/menu/update')
+
     else:
         return redirect('/login')
 
@@ -96,17 +97,18 @@ def deleteitem(request, did):
     if request.user.is_authenticated:
         if request.user.is_staff:
             item = Menu.objects.get(item_id=did)
-            item.delete()
-            fullmenu = Menu.objects.order_by('category')
-            return render(request, 'updatemenu.html', {'Menu': fullmenu})
+            if item:
+                item.delete()
+            return redirect("/menu/update")
         else:
             return redirect('/menu')
     else:
-        return redirect('/login')
+        return redirect("/login")
+
 
 
 def changeavailable(request, cid):
-    if request.user.is_authenticated:
+    if request.user.is_authenticated :
         if request.user.is_staff:
             item = Menu.objects.get(item_id=cid)
             if item.is_available:

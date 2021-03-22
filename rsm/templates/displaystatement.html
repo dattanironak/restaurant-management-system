@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+   <style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;
+}
+</style>
+{% for msg in messages %}
+
+<h3>{{msg}}</h3>
+{% endfor %}
+
+<body>
+
+
+<table>
+    <tr>
+        <th>Bill ID</th>
+        <th>Bill Date</th>
+        <th>Table No</th>
+        <th>Discount</th>
+        <th>Bill TOtal</th>
+
+    </tr>
+
+    {% for bill in bills %}
+    <tr>
+        <td>{{bill.id}}</td>
+        <td>{{bill.bill_date}}</td>
+        <td>{{bill.table_no}}</td>
+        <td>{{bill.discount}}</td>
+        <td>{{bill.total}}</td>
+
+    </tr>
+    {% endfor %}
+</table>
+<form action="/bill/statement">
+    <button type="submit" value="close">Close</button>
+</form>
+
+</body>
+</html>

@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'feedback.apps.FeedbackConfig',
+    'Bill.apps.BillConfig',
     'user.apps.UserConfig',
     'menu.apps.MenuConfig',
     'django.contrib.admin',

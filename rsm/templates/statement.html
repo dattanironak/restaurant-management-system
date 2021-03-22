@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Statement</title>
+    <script src="/static/admin/js/admin/DateTimeShortcuts.js"></script>
+</head>
+{% for msg in messages %}
+
+<h3>{{msg}}</h3>
+{% endfor %}
+
+<body>
+<h1> Welcome</h1>
+<h2> Please Enter time period for bill statement.</h2>
+
+<div>
+<form method="post">{% csrf_token %}
+    <label>Start :</label>
+    <input type="datetime-local" name="from_time" placeholder="dd/mm/yyyy">
+
+    <label>To :</label>
+    <input type="datetime-local"   name="to_time" value="2022-03-31">
+
+    <input type="submit" value="OK">
+</form>
+</body>
+</html>

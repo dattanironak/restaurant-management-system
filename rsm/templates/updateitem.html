@@ -14,7 +14,7 @@
 <form name="UpdateItem" method="post">{% csrf_token %}
 
 
-    <label>Item Name :<input type="text" name="item_name"  required value={{item.item_name}} ></label><br>
+    <label>Item Name :<input type="text" name="item_name"  required value="{{item.item_name}}" ></label><br>
 
     <label>Item Category :<select id="categories" name="categories">
         {% for category in categories %}

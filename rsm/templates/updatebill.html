@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Bill</title>
+</head>
+
+    <style>
+        table, th, td {
+          border: 1px solid black;
+          border-collapse: collapse;
+        }
+        th, td {
+          padding: 5px;
+          text-align: left;
+        }
+</style>
+{% for msg in messages %}
+
+<h3>{{msg}}</h3>
+{% endfor %}
+
+<body>
+
+<h2>Bill ID : {{bill.id}}</h2>
+<h2>Table No : {{bill.table_no}}</h2>
+<h2>Bill Print : {{bill.is_printed}}</h2>
+<h2>Bill Active : {{bill.is_active}}</h2>
+<table style="width:100%">
+    <tr>
+
+         <th>ID</th>
+         <th>Name</th>
+        <th>Quantity</th>
+         <th>Price</th>
+         <th>Item Total</th>
+         <th>Save/update</th>
+         <th>Delete</th>
+
+  </tr>
+ {% for item in items %}
+    {% if item != to_update_item %}
+  <tr>
+      <td>{{item.item_id.item_id}}</td>
+      <td>{{item.item_name}}</td>
+
+      <td>{{item.quantity}}</td>
+      <td>{{item.item_price}}</td>
+      <td>{{item.item_total}}</td>
+      <td><a href="{{bill.table_no}}/{{item.id}}"> <button type="submit">Update</button></a></td>
+      <td><a href="deleteitem/{{bill.table_no}}/{{item.id}}"><button type="submit">Delete</button></a></td>
+  </tr>
+    {% endif %}
+{% endfor %}
+
+
+<form method="Post" action="/bill/updatebill/{{bill.table_no}}">{% csrf_token %}
+
+
+
+   {% if to_update_item %}
+    <td><input list="item_ids" name="item_id"  value="{{to_update_item.item_id.item_id}}" required>
+        <datalist  id="item_ids">
+            {% for i in menu %}
+                <option value="{{i.item_id}}">
+            {% endfor %}
+        </datalist>
+    </td>
+
+      <td>
+        <input type="hidden" name="update_from_web_id" value="{{to_update_item.id}}">
+          <select name="i_name" id="i_name" >
+              {% for j in menu%}
+                  <option value="{{j.item_name}}"  {% if j.item_name == to_udate_item.item_name %} selected {% endif%} >{{j.item_name}}</option>
+              {% endfor %}
+          </select>
+      </td>
+      <td><input type="number" name="quantity" id="quantity"  value="{{to_update_item.quantity}}" min=1></td>
+      <td><input type="number" id="price" name="price"  value="{{to_update_item.item_price}}"}>{{item.price}}</td>
+      <td><input type="number" name="total" id="total" value="{{to_update_item.item_total}} readonly>{{item.total}}"></td>
+
+
+
+
+    {% else %}
+
+       <td>
+        <select  name="item_id"  id="item_ids">
+            {% for i in menu %}
+                <option value="{{i.item_id}}">{{i.item_id}}</option>
+            {% endfor %}
+
+        </select>
+    </td>
+
+      <td>
+
+          <select name="i_name" id="i_name" >
+              {% for j in menu%}
+                  <option value="{{j.item_name}}">{{j.item_name}}</option>
+              {% endfor %}
+          </select>
+
+      </td>
+      <td><input type="number" name="quantity" id="quantity"  value=1 min=1 ></td>
+      <td><input type="number" id="price" name="price"  value=0 >{{item.price}}</td>
+      <td><input type="number" name="total" id="total"  value=0   readonly>{{item.total}}</td>
+
+    {% endif %}
+
+
+      <td> <button type="submit">Save</button></a></td>
+</form>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>TOTAL :</td>
+        <td>{{bill.total}}</td>
+    </tr>
+
+</table>
+<a href="/bill/print/{{bill.id}}"><button value="Print" type="submit">Print</button></a>
+
+<a href="/bill/finish/{{bill.id}}"><button value="Finish" type="submit">Finish</button></a>
+
+<a href="/bill"><button value="Save" type="submit">Save</button></a>
+
+
+
+</body>
+</html>

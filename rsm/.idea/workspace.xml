@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="52f09969-8118-4e56-a651-d733b4340377" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/Bill/statement.py" beforeDir="false" afterPath="$PROJECT_DIR$/Bill/statement.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bill/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Bill/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bill/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Bill/views.py" afterDir="false" />
@@ -25,6 +26,13 @@
       <change beforePath="$PROJECT_DIR$/templates/updatebill.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/updatebill.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/updateitem.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/updateitem.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/updatemenu.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/updatemenu.html" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/menu/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/menu/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/menu/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/menu/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rsm/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/rsm/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rsm/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/rsm/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/updateitem.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/updateitem.html" afterDir="false" />
+>>>>>>> 673f329fd7fcf909a38534e4fb7b8022537e44f1
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -26,4 +26,8 @@ urlpatterns = [
     path('login/', include('user.urls')),
     path('menu/', include('menu.urls')),
     path('bill/', include('Bill.urls'))
+<<<<<<< HEAD
 ] + staticfiles_urlpatterns()
+=======
+]
+>>>>>>> 673f329fd7fcf909a38534e4fb7b8022537e44f1

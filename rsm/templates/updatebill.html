@@ -78,14 +78,8 @@
               {% endfor %}
           </select>
       </td>
-      <td><input type="number" name="quantity" id="quantity"  value="{{to_update_item.quantity}}" min=1 onchange="quantity_change()"></td>
       <td><input type="number" id="price" name="price"  value="{{to_update_item.item_price}}" min=1 onchange="price_change"></td>
       <td><input type="number" name="total" id="total" value="{{to_update_item.item_total}}"></td>
-
-
-
-
-    {% else %}
 
        <td>
         <select  name="item_id"  id="item_ids">

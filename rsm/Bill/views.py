@@ -1,12 +1,18 @@
 from django.core.exceptions import ObjectDoesNotExist, MultipleObjectsReturned
 from django.contrib import messages
+<<<<<<< HEAD
 from django.http import FileResponse
+=======
+>>>>>>> 673f329fd7fcf909a38534e4fb7b8022537e44f1
 from django.shortcuts import render, redirect
 from .models import Bill, BillMenu
 from menu.models import Menu
 from django.utils import timezone
+<<<<<<< HEAD
 import json
 from .printbill import print_bill
+=======
+>>>>>>> 673f329fd7fcf909a38534e4fb7b8022537e44f1
 
 # Create your views here.
 
@@ -52,7 +58,11 @@ def newbill(request, table_no = 0) :
         return redirect('/login')
 
 
+<<<<<<< HEAD
 def updatebill(request, table_no=0) :
+=======
+def updatebill(request, table_no=0, update_id=None) :  # update_id is ID of BillMenu model if particular item
+>>>>>>> 673f329fd7fcf909a38534e4fb7b8022537e44f1
     if request.user.is_authenticated :
         if request.user.is_staff :
             if request.method == 'POST':
@@ -68,6 +78,7 @@ def updatebill(request, table_no=0) :
                     messages.info(request, "Something went wrong. line 65")
                     return redirect('/bill')
 
+<<<<<<< HEAD
                 # -------------------------------------------------------------------------------------------------------
                 # update_id is ID of BillMenu model if particular item
                 # -------------------------------------------------------------------------------------------------------
@@ -108,6 +119,31 @@ def updatebill(request, table_no=0) :
             else:
                 bill = None
                 to_update_item = None
+=======
+                if 'update_from_web_id' in request.POST :
+                    up_id = request.POST['update_from_web_id']
+                    item = BillMenu.objects.get(id=up_id)
+                else :
+                    item = BillMenu()
+                    item.bill_id = bill
+                try :
+                    item_for_instance = Menu.objects.get(item_id=request.POST['item_id'])
+                except ObjectDoesNotExist :
+                    messages.info(request, "Something went wrong. line 77")
+                    return redirect('/bill')
+                except MultipleObjectsReturned:
+                    messages.info(request, "Something went wrong.line 80")
+                    return redirect('/bill')
+
+                item.item_id = item_for_instance
+                item.item_name = item_for_instance.item_name
+                item.item_price = request.POST['price']
+                item.quantity = request.POST['quantity']
+                item.item_total = int(item.item_price) * int(item.quantity)
+                item.save()
+            else:
+                bill = None
+>>>>>>> 673f329fd7fcf909a38534e4fb7b8022537e44f1
 
             # -------------------------------------------------------------------------------------------------------
             #   Either request is post or no request, we have to return update bill page. This Part is doing returning.
@@ -120,7 +156,10 @@ def updatebill(request, table_no=0) :
                 except ObjectDoesNotExist:
                     bill = None
                     messages.info(request, "Something went wrong. line 102")
+<<<<<<< HEAD
                     print(table_no)
+=======
+>>>>>>> 673f329fd7fcf909a38534e4fb7b8022537e44f1
                     return redirect('/bill')
                 except MultipleObjectsReturned:
                     messages.info(request, 'Something seriosly went wrong.')
@@ -135,6 +174,7 @@ def updatebill(request, table_no=0) :
 
             except ObjectDoesNotExist :
                 items = None
+<<<<<<< HEAD
 
             menu = Menu.objects.filter(is_available=True)
 
@@ -152,6 +192,22 @@ def updatebill(request, table_no=0) :
         else :
             return redirect('/')
     else:
+=======
+            try :
+                to_update_item = BillMenu.objects.get(id=update_id)
+            except ObjectDoesNotExist :
+                to_update_item = None
+
+
+            menu = Menu.objects.filter(is_available=True)
+
+            return render(request, 'updatebill.html',
+                          {'bill' : bill, 'items' : items, 'menu' : menu, 'to_update_item' : to_update_item})
+
+        else :
+            return redirect('/')
+    else :
+>>>>>>> 673f329fd7fcf909a38534e4fb7b8022537e44f1
         return redirect('/login')
 
 
@@ -167,23 +223,38 @@ def deleteitem(request, delete_id, bill_id) :
             # Have to check how to impliment this url
             #
 
+<<<<<<< HEAD
             return redirect('/bill/updatebill/' + str(bill_id))
+=======
+            return redirect('/bill/updatebill' + str(bill_id))
+>>>>>>> 673f329fd7fcf909a38534e4fb7b8022537e44f1
         else :
             return redirect('/')
     else :
         return redirect('/login')
 
 
+<<<<<<< HEAD
 def printbill_views(request, bid) :
+=======
+def print(request, bid) :
+>>>>>>> 673f329fd7fcf909a38534e4fb7b8022537e44f1
     if request.user.is_authenticated :
         if request.user.is_staff :
             bill = Bill.objects.get(id=bid)
             bill.is_printed = True
 
+<<<<<<< HEAD
             bill.save()
             printable_bill = print_bill(bid)
             print("Printable bill received.")
             return FileResponse(open(str(bill.id)+".pdf", 'rb'),as_attachment=True, filename=printable_bill)
+=======
+            ### Print Function will be placed here
+
+            bill.save()
+            return redirect('/bill/updatebill' + str(bill.table_no))
+>>>>>>> 673f329fd7fcf909a38534e4fb7b8022537e44f1
         else :
             return redirect('/')
     else :

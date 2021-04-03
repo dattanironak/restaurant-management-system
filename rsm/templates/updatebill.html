@@ -47,7 +47,10 @@
       <td>{{item.quantity}}</td>
       <td>{{item.item_price}}</td>
       <td>{{item.item_total}}</td>
-      <td><a href="{{bill.table_no}}/{{item.id}}"> <button type="submit">Update</button></a></td>
+      <td><form method="post">{% csrf_token %}
+              <input type="hidden" name="update_id" value="{{item.id}}">
+                <input type="submit" value="Update">
+          </form></td>
       <td><a href="deleteitem/{{bill.table_no}}/{{item.id}}"><button type="submit">Delete</button></a></td>
   </tr>
     {% endif %}
@@ -59,12 +62,12 @@
 
 
    {% if to_update_item %}
-    <td><input list="item_ids" name="item_id"  value="{{to_update_item.item_id.item_id}}" required>
-        <datalist  id="item_ids">
+    <td><select name="item_id" id="item_ids"  required>
+
             {% for i in menu %}
-                <option value="{{i.item_id}}">
+                <option value="{{i.item_id}}" {% if i.item_id == to_udate_item.item_id %} selected {% endif %} >{{i.item_id}}</option>
             {% endfor %}
-        </datalist>
+
     </td>
 
       <td>
@@ -75,9 +78,9 @@
               {% endfor %}
           </select>
       </td>
-      <td><input type="number" name="quantity" id="quantity"  value="{{to_update_item.quantity}}" min=1></td>
-      <td><input type="number" id="price" name="price"  value="{{to_update_item.item_price}}"}>{{item.price}}</td>
-      <td><input type="number" name="total" id="total" value="{{to_update_item.item_total}} readonly>{{item.total}}"></td>
+      <td><input type="number" name="quantity" id="quantity"  value="{{to_update_item.quantity}}" min=1 onchange="quantity_change()"></td>
+      <td><input type="number" id="price" name="price"  value="{{to_update_item.item_price}}" min=1 onchange="price_change"></td>
+      <td><input type="number" name="total" id="total" value="{{to_update_item.item_total}}"></td>
 
 
 
@@ -89,13 +92,12 @@
             {% for i in menu %}
                 <option value="{{i.item_id}}">{{i.item_id}}</option>
             {% endfor %}
-
         </select>
     </td>
 
       <td>
 
-          <select name="i_name" id="i_name" >
+          <select name="i_name" id="i_name">
               {% for j in menu%}
                   <option value="{{j.item_name}}">{{j.item_name}}</option>
               {% endfor %}
@@ -103,8 +105,8 @@
 
       </td>
       <td><input type="number" name="quantity" id="quantity"  value=1 min=1 ></td>
-      <td><input type="number" id="price" name="price"  value=0 >{{item.price}}</td>
-      <td><input type="number" name="total" id="total"  value=0   readonly>{{item.total}}</td>
+      <td><input type="number" id="price" name="price"  value=1 >{{item.price}}</td>
+      <td><input type="number" name="total" id="total" >{{item.total}}</td>
 
     {% endif %}
 
@@ -126,6 +128,68 @@
 
 <a href="/bill"><button value="Save" type="submit">Save</button></a>
 
+<script>
+    // setup - getting JSON from server for menu items
+    let menu_json = {{ menu_json | safe}};
+
+
+    // change corresponding fields on id change
+    id_field = document.getElementById("item_ids")
+    name_field = document.getElementById("i_name")
+    price_field = document.getElementById("price")
+    quantity_field = document.getElementById("quantity")
+    total_field = document.getElementById("total")
+
+    id_field.addEventListener('change', function(){
+        // selected_id is id which is currently updated
+        selected_id = id_field.value;
+
+        // loop over all menu items
+        for (i = 0; i < menu_json.length; i++) {
+            // select the menu_item whose id is selected
+            if(menu_json[i].item_id == selected_id)
+            {
+                // update corresponding fields
+                to_be_updated = menu_json[i]
+                name_field.value = to_be_updated.item_name
+                price_field.value = to_be_updated.item_price
+                quantity_field.value = 1
+                total_field.value = price_field.value * quantity_field.value
+            }
+        }
+    })
+
+    name_field.addEventListener('change', function(){
+        // selected_name is name which is currently updated
+        selected_name = name_field.value;
+
+        // loop over all menu items
+        for (i = 0; i < menu_json.length; i++) {
+            // select the menu_item whose name is selected
+            if(menu_json[i].item_name == selected_name)
+            {
+                // update corresponding fields
+                to_be_updated = menu_json[i]
+                id_field.value = to_be_updated.item_id
+                price_field.value = to_be_updated.item_price
+                quantity_field.value = 1
+                total_field.value = price_field.value * quantity_field.value
+            }
+        }
+    })
+
+    quantity_field.addEventListener('change', function(){
+
+        total_field.value = price_field.value * quantity_field.value
+
+    })
+
+    price_field.addEventListener('change', function(){
+
+        total_field.value = price_field.value * quantity_field.value
+
+    })
+</script>
 
 
 </body>

@@ -6,11 +6,25 @@
   <component name="ChangeListManager">
     <list default="true" id="52f09969-8118-4e56-a651-d733b4340377" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/menu/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/menu/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bill/statement.py" beforeDir="false" afterPath="$PROJECT_DIR$/Bill/statement.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bill/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Bill/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bill/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Bill/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/menu/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/menu/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rsm/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/rsm/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rsm/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/rsm/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/additem.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/additem.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/bills.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bills.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/displayfeedback.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/displayfeedback.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/displaystatement.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/displaystatement.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/feedback.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/feedback.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/menu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/statement.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/statement.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/updatebill.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/updatebill.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/updateitem.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/updateitem.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/updatemenu.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/updatemenu.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +34,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -60,7 +74,28 @@
       <recent name="D:\Study\Sem - 4\SP\Project\Restaurant management System\restaurant-management-system\rsm\feedback" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.p1">
+    <configuration name="p1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="rsm" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Desktop" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/Desktop/p1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="views" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="rsm" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -84,6 +119,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.p1" />
         <item itemvalue="Python.views" />
       </list>
     </recent_temporary>

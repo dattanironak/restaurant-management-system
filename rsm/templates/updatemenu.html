@@ -1,15 +1,19 @@
+{% include 'header.html' %}
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <style>
-table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-th, td {
-  padding: 5px;
-  text-align: left;
-}
+        table, th, td {
+          border: 1px solid black;
+          border-collapse: collapse;
+        }
+        th, td {
+          padding: 5px;
+          text-align: left;
+        }
 </style>
     <meta charset="UTF-8">
     <title>Menu</title>
@@ -22,11 +26,13 @@ th, td {
 <h3>{{msg}}</h3>
 {% endfor %}
 
+<div style="margin:10px;">
+    <h2> Update Menu</h2>
+    <p>We have lot of dishes to satisfy your hunger.</p>
+</div>
 
-<h2>Menu</h2>
-<p>We have lot of dishes to satisfy your hunger.</p>
 
-<h3><a href="/menu/additem">Add Item</a> </h3>
+<h3 style="margin:10px;" ><a href="/menu/additem">Add Item</a> </h3>
 
 <table style="width:100%">
 

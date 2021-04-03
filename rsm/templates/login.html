@@ -1,3 +1,7 @@
+{% include 'header.html' %}
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,16 +9,18 @@
     <title>Log In</title>
 </head>
 <body>
+    <div class="form-group" style="text-align:center">
+        <form  name="regForm" method="post">{% csrf_token %}
 
-<form name="regForm" method="post">{% csrf_token %}
-
-    <label>Username : <input type="text" name="username"></label><br>
-    <label>Password : <input type="password" name="password"></label><br>
-<input type="submit" value="Login">
-</form>
-
-<h3> New User ?</h3>
-<h3><a href = "/login/register">Register Here</a></h3>
+            <label>Username : <input type="text" class="form-control" name="username"></label><br>
+            <label>Password : <input type="password" class="form-control" name="password"></label><br>
+        <input type="submit" class="btn btn-primary mb-2" style="margin : 5px; " value="Login">
+        </form>
+    </div>
+<h3 style="text-align:center"> New User ?</h3>
+    <div style="bacground-color : Blue; text-align : center;">
+            <h3><a href = "/login/register">Register Here</a></h3>
+    </div>
 {% for msg in messages %}
 
 <h3>{{msg}}</h3>

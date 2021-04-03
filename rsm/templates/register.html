@@ -1,3 +1,6 @@
+{% include 'header.html' %}
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,18 +8,19 @@
     <title>Register</title>
 </head>
 <body>
+<div class="form-group" style="text-align:center">
+    <form name="regForm" method="post">{% csrf_token %}
+        <label>First Name: <input type="text" class="form-control"  name="first_name" required></label><br>
+        <label>Last Name : <input type="text" class="form-control"  name="last_name" required></label><br>
+        <label>Username : <input type="text" class="form-control"  name="username"  required></label><br>
+        <label>Email : <input type="email" class="form-control"  name="email" required></label><br>
+        <label>Password : <input type="text"  class="form-control"  name="password"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required></label><br>
+        <label>Confirm Password: <input type="text" class="form-control"  name="cpassword" required></label><br>
+    <input type="submit" style="margin : 5px; " class="btn btn-primary mb-2" value="register">
+    </form>
 
-<form name="regForm" method="post">{% csrf_token %}
-    <label>First Name: <input type="text" name="first_name" required></label><br>
-    <label>Last Name : <input type="text" name="last_name" required></label><br>
-    <label>Username : <input type="text" name="username"  required></label><br>
-    <label>Email : <input type="email" name="email" required></label><br>
-    <label>Password : <input type="text" name="password"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required></label><br>
-    <label>Confirm Password: <input type="text" name="cpassword" required></label><br>
-<input type="submit" value="register">
-</form>
-
-<div id="message">
+</div>
+<div id="message" style="text-align:center">
   <h3>Password must contain the following:</h3>
   <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
   <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>

@@ -9,15 +9,19 @@ def statement(request) :
     if request.user.is_authenticated:
         if request.user.is_staff:
             if request.method == 'POST' :
-                #print(request.POST['from_time'], type(request.POST['from_time']))
-                #from_time = datetime.strptime(request.POST['from_time'], '%y-%m-%dT%H:%M')
-                #to_time = datetime.strptime(request.POST['to_time'])
+                print(request.POST['from_time'], type(request.POST['from_time']))
+                from_time = datetime.strptime(request.POST['from_time'], '%Y-%m-%dT%H:%M')
+                to_time = datetime.strptime(request.POST['to_time'], '%Y-%m-%dT%H:%M')
                 bills = Bill.objects.filter(is_active=False)
+                bills_to_send = []
+                total = 0
+                tz_info = from_time.tzinfo
                 print(bills[0].bill_date, type(bills[0].bill_date))
-                # for bill in bills:
-                #     if bill.bill_date:
-                #         pass
-                return render(request, 'displaystatement.html',  {'bills': bills})
+                for bill in bills:
+                     if bill.bill_date > from_time and bill.bill_date<to_time:
+                         bills_to_send.append(bill)
+                         total = total + bill.total
+                return render(request, 'displaystatement.html',  {'bills': bills_to_send, 'total': total})
 
             return render(request, 'statement.html')
         else:

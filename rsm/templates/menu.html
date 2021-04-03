@@ -1,3 +1,6 @@
+{% include 'header.html' %}
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,26 +19,22 @@ th, td {
 </head>
 
 <body>
-
+<div style="margin:10px;">
 <h2>Menu</h2>
 <p>We have lot of dishes to satisfy your hunger.</p>
-
-{% if request.user.is_staff %}
-<h2><a href="/menu/update">Update Menu</a></h2>
-{% endif %}
-<table style="width:100%">
+</div>
+<table class="table-responsive" style="width:100%; margin :10px;">
 
      <tr>
     <th>Category</th>
-    <th>ID</th>
          <th>Name</th>
          <th>Price</th>
   </tr>
 
     {% for item in Menu %}
   <tr>
+
       <td>{{item.category}}</td>
-      <td>{{item.item_id}}</td>
       <td>{{item.item_name}}</td>
       <td>{{item.price}}</td>
 

@@ -1,3 +1,6 @@
+{% include 'header.html' %}
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,10 +20,10 @@
 <div>
 <form method="post">{% csrf_token %}
     <label>Start :</label>
-    <input type="datetime-local" name="from_time" placeholder="dd/mm/yyyy">
+    <input type="datetime-local" name="from_time" placeholder="dd/mm/yyyy" value="2020-03-31T00:00">
 
     <label>To :</label>
-    <input type="datetime-local"   name="to_time" value="2022-03-31">
+    <input type="datetime-local"   name="to_time" value="2021-03-31T00:00">
 
     <input type="submit" value="OK">
 </form>

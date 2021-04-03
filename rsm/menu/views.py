@@ -5,7 +5,7 @@ from django.contrib import messages
 
 # Create your views here.
 def menu(request):
-    fullmenu = Menu.objects.order_by('category')
+    fullmenu = Menu.objects.filter(is_available=True).order_by('category')
     return render(request, 'menu.html', {'Menu': fullmenu})
 
 
